@@ -34,7 +34,7 @@ that can be overridden.
 
 If you need a playbook to set Docker itself, have a look at [angstwad.docker_ubuntu](https://github.com/angstwad/docker.ubuntu) Galaxy role.
 
-Default docker image used is [grafana/grafana](https://hub.docker.com/r/grafana/grafana/). Basic auth account `admin/admin`.
+Default docker image used is [grafana/grafana](https://hub.docker.com/r/grafana/grafana/). Default port is 3000, admin account `admin/admin`.
 
 
 License
