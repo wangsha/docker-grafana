@@ -1,0 +1,19 @@
+
+- name: Run docker grafana container
+  become: true
+  docker:
+    docker_api_version: "{{ docker_api_version }}"
+    env: "{{ docker_grafana_env }}"
+    expose: "{{ docker_grafana_expose }}"
+    image: "{{ docker_grafana_image }}"
+    name: "{{ docker_grafana_name }}"
+    ports: "{{ docker_grafana_ports }}"
+    links: "{{ docker_grafana_links }}"
+    log_driver: "{{ docker_grafana_log_driver }}"
+    log_opt: "{{ docker_grafana_log_opt }}"
+    pull: always
+    restart_policy: always
+    state: reloaded
+  tags:
+    - install
+    - upgrade

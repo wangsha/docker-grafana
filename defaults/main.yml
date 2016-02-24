@@ -1,0 +1,17 @@
+---
+# defaults file for docker-grafana
+docker_grafana_name: grafana
+docker_grafana_image: grafana/grafana
+docker_grafana_env: {}
+docker_grafana_net: default
+docker_grafana_expose:
+  - 3000
+docker_grafana_ports:
+  - 3000:3000
+docker_grafana_volumes: []
+docker_grafana_links: []
+docker_grafana_log_driver: syslog
+docker_grafana_log_opt:
+  syslog-facility: local0
+  syslog-tag: grafana
+docker_api_version: 1.21
