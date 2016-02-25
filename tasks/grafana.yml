@@ -9,6 +9,7 @@
     name: "{{ docker_grafana_name }}"
     ports: "{{ docker_grafana_ports }}"
     links: "{{ docker_grafana_links }}"
+    volumes: "{{ docker_grafana_volumes }}"
     log_driver: "{{ docker_grafana_log_driver }}"
     log_opt: "{{ docker_grafana_log_opt }}"
     pull: always
