@@ -10,6 +10,7 @@
     ports: "{{ docker_grafana_ports }}"
     links: "{{ docker_grafana_links }}"
     volumes: "{{ docker_grafana_volumes }}"
+    memory_limit: "{{ docker_grafana_memory_limit }}"
     log_driver: "{{ docker_grafana_log_driver }}"
     log_opt: "{{ docker_grafana_log_opt }}"
     pull: always
