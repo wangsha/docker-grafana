@@ -14,5 +14,5 @@ docker_grafana_log_driver: syslog
 docker_grafana_log_opt:
   syslog-facility: local0
   syslog-tag: grafana
-docker_grafana_memory_limit: 512m
+docker_grafana_memory_limit: 512MB
 docker_api_version: 1.21
