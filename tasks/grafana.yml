@@ -1,3 +1,13 @@
+- name: Ensure docker grafana data directories exist
+  file:
+    state: directory
+    path: "{{ item }}"
+  with_items:
+    - "{{ docker_grafana_data_dir }}"
+  when: docker_grafana_volumes|length > 0
+  tags:
+    - install
+    - upgrade
 
 - name: Run docker grafana container
   become: true

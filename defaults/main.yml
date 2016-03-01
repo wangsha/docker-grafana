@@ -8,7 +8,10 @@ docker_grafana_expose:
   - 3000
 docker_grafana_ports:
   - 3000:3000
-docker_grafana_volumes: []
+# grafana sqlite3 database
+docker_grafana_data_dir: /opt/grafana/data
+docker_grafana_volumes:
+  - "{{ docker_grafana_data_dir }}:/var/lib/grafana"
 docker_grafana_links: []
 docker_grafana_log_driver: syslog
 docker_grafana_log_opt:

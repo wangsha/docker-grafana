@@ -30,11 +30,34 @@ Use it in a playbook as follows, assuming you already have docker setup:
 ```
 
 Have a look at the [defaults/main.yml](defaults/main.yml) for role variables
-that can be overridden.
+that can be overridden. Full list of environment variables can be found [here](http://docs.grafana.org/installation/configuration/)
+
+Sample configuration allowing github signup.
+```yaml
+- role: docker-grafana
+      docker_grafana_env:
+        GF_SECURITY_ADMIN_USER: myadmin
+        GF_SECURITY_ADMIN_PASSWORD: myadmin
+        GF_USERS_ALLOW_SIGN_UP: true
+        GF_SERVER_ROOT_URL: http://localhost:3000/
+        GF_AUTH_GITHUB_ALLOW_SIGN_UP: true
+        GF_AUTH_GITHUB_ENABLED: true
+        GF_AUTH_GITHUB_SCOPES: user:email,read:org
+        GF_AUTH_GITHUB_CLIENT_ID: XXXX
+        GF_AUTH_GITHUB_CLIENT_SECRET: XXXX
+        GF_AUTH_GITHUB_ALLOWED_ORGANIZATIONS: yourgithuborganization
+```
 
 If you need a playbook to set Docker itself, have a look at [angstwad.docker_ubuntu](https://github.com/angstwad/docker.ubuntu) Galaxy role.
 
 Default docker image used is [grafana/grafana](https://hub.docker.com/r/grafana/grafana/). Default port is 3000, admin account `admin/admin`.
+
+
+Additional References
+---------------------
+- [default docker image](https://hub.docker.com/r/grafana/grafana/)
+- [dockerfile](https://github.com/grafana/grafana-docker)
+- [docker image documentation](http://docs.grafana.org/installation/docker/)
 
 
 License
