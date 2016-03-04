@@ -35,11 +35,13 @@ that can be overridden. Full list of environment variables can be found [here](h
 Sample configuration allowing github signup.
 ```yaml
 - role: docker-grafana
+      docker_grafana_ports:
+        - 8080:3000
       docker_grafana_env:
         GF_SECURITY_ADMIN_USER: myadmin
         GF_SECURITY_ADMIN_PASSWORD: myadmin
         GF_USERS_ALLOW_SIGN_UP: true
-        GF_SERVER_ROOT_URL: http://localhost:3000/
+        GF_SERVER_ROOT_URL: http://localhost:8080/
         GF_AUTH_GITHUB_ALLOW_SIGN_UP: true
         GF_AUTH_GITHUB_ENABLED: true
         GF_AUTH_GITHUB_SCOPES: user:email,read:org

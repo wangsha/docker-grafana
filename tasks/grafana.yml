@@ -1,10 +1,9 @@
-- name: Ensure docker grafana data directories exist
+- name: Ensure docker grafana volume mapping host directories exist
   file:
     state: directory
-    path: "{{ item }}"
+    path: "{{ item | regex_replace('^(?P<host>.+):(?P<container>.+)$', '\\g<host>')}}"
   with_items:
-    - "{{ docker_grafana_data_dir }}"
-  when: docker_grafana_volumes|length > 0
+    - "{{ docker_grafana_directory_volumes }}"
   tags:
     - install
     - upgrade
